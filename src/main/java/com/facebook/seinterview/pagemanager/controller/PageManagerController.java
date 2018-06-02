@@ -16,13 +16,13 @@ import com.facebook.seinterview.pagemanager.utils.PageManagerUtils;
 public class PageManagerController {	
 
     @ResponseBody
-    @RequestMapping(value = "/GetAccessToken", method = RequestMethod.GET)
+    @RequestMapping(value = "/PageManager/GetAccessToken", method = RequestMethod.GET)
     public String getAccessToken(HttpServletRequest request) {
         return PageManagerUtils.getAccessToken();
     }
 
     @ResponseBody
-    @RequestMapping(value = "/CreatePost", method = RequestMethod.POST)
+    @RequestMapping(value = "/PageManager/CreatePost", method = RequestMethod.POST)
     public void createPost(HttpServletRequest request) {
         String accessToken = request.getParameter("accessToken");
         String postContent = request.getParameter("postContent");
@@ -31,7 +31,7 @@ public class PageManagerController {
         PageManagerUtils.createPost(accessToken, postContent, isPublished);
     }
 
-    @RequestMapping(value = "/ReadPost", method = RequestMethod.GET)
+    @RequestMapping(value = "/PageManager/ReadPost", method = RequestMethod.GET)
     public @ResponseBody List<PageManagerPagePost> readPost(HttpServletRequest request) {
         String accessToken = request.getParameter("accessToken");
 
