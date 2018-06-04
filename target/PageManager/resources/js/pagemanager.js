@@ -27,12 +27,14 @@ var PageManager = {
 
         $("#newPostWindowSubmit").on("click", $.proxy(function() {
             var postContent = $("#newPostMessage").val(),
-                isPublished = $("#newPostIsPublished").attr("checked") === true,
+                isPublished = $("#newPostIsPublished").prop("checked"),
 
                 callback = $.proxy(function() {
                     $("#newPostWindow").data("kendoWindow").close();
                     this._renderPostsGrid();
                 }, this);
+				
+				console.log("POST IS: " + isPublished);
 
             this._createPost(this._accessToken, postContent, isPublished, callback);
         }, this));
@@ -68,7 +70,7 @@ var PageManager = {
                                 "<tr>" +
                                     "<td>" + $("<div />").text(y.message).html() + "</td>" +
                                     "<td>" + $("<div />").text(y.datePosted).html() + "</td>" +
-                                    "<td>" + (y.isPublished ? "Yes" : "No") + "</td>" +
+									"<td>" + (y.published ? "Yes" : "No") + "</td>" +
                                 "</tr>";
                         }, "") +
                     "</tbody>" +

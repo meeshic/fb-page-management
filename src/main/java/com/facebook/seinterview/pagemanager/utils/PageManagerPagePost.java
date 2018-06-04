@@ -4,7 +4,8 @@ public class PageManagerPagePost {
     private String accessToken;
     private String message;
     private String datePosted;
-    private boolean isPublished;
+    //private boolean isPublished;
+	private boolean published;
 
     public String getAccessToken() {
         return accessToken;
@@ -14,6 +15,7 @@ public class PageManagerPagePost {
         return this;
     }
     public String getMessage() {
+		System.out.println("Getting message:" + message);
         return message;
     }
     public PageManagerPagePost setMessage(String message) {
@@ -27,11 +29,22 @@ public class PageManagerPagePost {
         this.datePosted = datePosted;
         return this;
     }
-    public boolean isPublished() {
+    /*public boolean isPublished() {
+		System.out.println("I'm called! : " + isPublished);
         return isPublished;
     }
     public PageManagerPagePost setPublished(boolean isPublished) {
         this.isPublished = isPublished;
+        return this;
+    }
+	*/
+	
+	public boolean isPublished() {
+		System.out.println("I'm called! : " + published);
+        return published;
+    }
+    public PageManagerPagePost setPublished(boolean published) {
+        this.published = published;
         return this;
     }
 }

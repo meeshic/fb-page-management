@@ -26,7 +26,7 @@ public class PageManagerController {
     public void createPost(HttpServletRequest request) {
         String accessToken = request.getParameter("accessToken");
         String postContent = request.getParameter("postContent");
-        boolean isPublished = request.getParameter("isPublished") == "true";
+        boolean isPublished = (request.getParameter("isPublished")).equals("true");
 
         PageManagerUtils.createPost(accessToken, postContent, isPublished);
     }

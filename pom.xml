@@ -49,6 +49,20 @@
       <version>${jackson.version}</version>
     </dependency>
 	
+	<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+	<!-- JSON Simple Parser Library -->
+	<dependency>
+		<groupId>com.googlecode.json-simple</groupId>
+		<artifactId>json-simple</artifactId>
+		<version>1.1</version>
+	</dependency>
+	
+	<!-- Java Dotenv: Load .env into ENV --> 
+	<dependency>
+		<groupId>io.github.cdimascio</groupId>
+		<artifactId>java-dotenv</artifactId>
+		<version>3.1.0</version>
+	</dependency>
 	
   </dependencies>
   
